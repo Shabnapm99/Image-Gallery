@@ -1,12 +1,14 @@
 let imageItems = [];
 let imageItem = document.getElementsByClassName('img-thumbnail');
-let carousalContainer = document.getElementById('carousalContainer');
-let carousel = document.getElementById('carousel');
 let imagesGallery = document.getElementById('imagesGallery');
 let backButton = document.getElementById('backButton');
 let heading = document.getElementById('heading');
 let paragraph = document.getElementById('para');
-let index = null;
+let showImage = document.getElementById('showImage');
+let carouselImage = document.getElementById('carouselImage');
+let nextButton = document.getElementById('nextButton');
+let prevButton = document.getElementById('prevButton');
+let index = null; 
 // console.log(imageItem)
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,18 +21,50 @@ document.addEventListener('DOMContentLoaded', () => {
         carousalContainer.appendChild(carousalItem);
 
         imageItem[i].addEventListener('click', () => {
-            console.log(`Hi I am ${imageItems[i]}`)
+            
             index = i;
             console.log(i);
             imagesGallery.classList.add('d-none');
-            carousel.classList.replace('d-none', 'd-block');
-            carousalItem.classList.add('active');
+
+            showImage.classList.remove('d-none');
+            console.log(`${imageItems[i]}`)
+            carouselImage.setAttribute('src', `${imageItems[i]}`);
+
             backButton.classList.replace('d-none', 'd-block');
             heading.classList.add('d-none');
             paragraph.classList.add('d-none');
 
-        })
-    }
+           nextButton.addEventListener('click', () => {
+                if (i === imageItems.length - 1) {
+
+                    carouselImage.setAttribute('src', `${imageItems[0]}`);
+                    i = 0;
+
+                } else {
+            
+                    carouselImage.setAttribute('src', `${imageItems[i + 1]}`);
+                    i = i+1;
+                }
+            });
+
+            prevButton.addEventListener('click', () => {
+                if (i !== 0) {
+                    
+                    carouselImage.setAttribute('src', `${imageItems[i - 1]}`);
+                    i = i-1;
+                } else {
+                    
+                    carouselImage.setAttribute('src', `${imageItems[imageItems.length - 1]}`);
+                    i = imageItems.length - 1;
+                }
+            });
+
+        });
+    };
+
+
+
+    
 
     backButton.addEventListener('click', () => {
         imagesGallery.classList.remove('d-none');
@@ -40,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         paragraph.classList.remove('d-none');
     })
 
-    console.log(imageItems);
 
 
-})
+});
