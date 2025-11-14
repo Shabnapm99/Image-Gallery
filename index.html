@@ -12,64 +12,19 @@
 
 <body>
 
-  <div class="container ">
-          <button class="btn d-flex justify-content-center align-items-center m-4 d-none" id="backButton"><span class="" style="font-weight: bolder;font-size: larger;">
-          Back</span></button>
-   
-        <h1 class="text-center" id="heading">HOME - PHOTOS</h1>
-        <p id="para"  class="text-center">Take a Tour</p>
+  <div class="container text-center">
 
+    <!-- Back button in carousal page -->
 
+    <button class="btn border-secondary rounded-pill d-flex justify-content-center align-items-center m-4 d-none"
+      id="backButton"><span class="" style="font-weight: bolder;font-size: larger;">
+        Back</span></button>
 
+    <!-- Heading -->
+    <h1 class="text-center" id="heading">HOME - PHOTOS</h1>
+    <p id="para" class="text-center">Take a Tour</p>
 
-    <!-- <div class="row row-cols-4 justify-content-center align-items-center">
-            <div class="col">
-
-                <img src="images/Bachelor's_button,_Basket_flower,_Boutonniere_flower,_Cornflower_-_3.jpg" width="600" height="400" class="img-fluid rounded">
-
-            </div>
-
-            <div class="col">
-
-                <img src="images/download (1).jpg" width="600" height="400" class="img-fluid rounded">
-
-            </div>
-
-            <div class="col">
-
-                <img src="images/download (2).jpg" width="600" height="400" class="img-fluid rounded">
-
-            </div>
-
-            <div class="col">
-
-                <img src="images/download (3).jpg" width="600" height="400" class="img-fluid rounded">
-
-            </div>
-
-            <div class="col">
-
-                <img src="images/download (4).jpg" width="600" height="400" class="img-fluid rounded">
-
-            </div>
-
-            <div class="col">
-
-                <img src="images/download.jpg" width="600" height="400" class="img-fluid rounded">
-
-            </div>
-            <div class="col">
-
-                <img src="images/download (5).jpg" width="600" height="400" class="img-fluid rounded">
-
-            </div>
-            <div class="col">
-
-                <img src="images/images.jpg" width="600" height="400" class="img-fluid rounded">
-
-            </div>
-
-        </div> -->
+    <!-- image gallery -->
 
     <div class="row gy-4" id="imagesGallery">
       <div class="col-md-3 col-6">
@@ -135,44 +90,40 @@
         </div>
       </div>
 
-
     </div>
 
+    <!-- Carousal images container-->
 
-    <div id="carousel" class="carousel slide d-none w-50 m-auto" data-bs-ride="false" data-bs-interval="false">
-      <div class="carousel-inner border" id="carousalContainer">
-
+    <div id="showImage" class="m-auto d-none">
+      <div id="image" class="w-75 m-auto">
+        <img src="" id="carouselImage">
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
 
-    <div id="showImage" class="w-50 m-auto d-none">
-      <div id="image">
-        <img src="images/Bachelor's_button,_Basket_flower,_Boutonniere_flower,_Cornflower_-_3.jpg" id="carouselImage">
-      </div>
+      <!-- go to previous button -->
 
       <button class="btn" type="button" id="prevButton">
         <!-- <span style="font-size: larger;font-weight: bolder;"><</span> -->
-         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="grey" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
-</svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="grey" class="bi bi-arrow-left-circle"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+        </svg>
       </button>
+
+      <!-- go to next button -->
+
       <button class="btn" type="button" id="nextButton">
         <!-- <span style="font-size: larger;font-weight: bolder;">></span> -->
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="grey" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
-</svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="grey" class="bi bi-arrow-right-circle"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+        </svg>
       </button>
 
     </div>
   </div>
+
   <!-- Scripts -->
 
   <script src="js/index.js"></script>
