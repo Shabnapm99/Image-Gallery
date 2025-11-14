@@ -1,4 +1,5 @@
 let imageItems = [];
+let container = document.getElementById('container');
 let imageItem = document.getElementsByClassName('img-thumbnail');
 let imagesGallery = document.getElementById('imagesGallery');
 let backButton = document.getElementById('backButton');
